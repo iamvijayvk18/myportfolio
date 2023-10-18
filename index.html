@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" type="text/CSS">
+    <style>
+        :root{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: blue;
+    color: #fff;
+    font-weight:bolder;
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image:black; 
+    background-size:cover;
+    background-position: center;
+}
+#k{
+    color: red;
+}
+.container{
+    padding: 10px 10px;  
+}
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+}
+nav h1{
+    font-size: 40px;
+    width: 80px;
+    margin-left: 10px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin:10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left:0;
+    bottom:-6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.head-text{
+    margin-top: 20%;
+    font-size: 30px;
+ 
+}
+
+.head-text h1{
+    margin-top: 20px;
+    font-size: 55px;
+}
+.head-text h1 span{
+    color: red;
+}
+
+/*----------------------------------------------About-------------------------------*/
+
+#about{
+    padding: 80px 0;
+}
+.row{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 10px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.subtitle{
+    font-size: 60px;
+    font-weight: 600;
+}
+.tab-title{
+    display: flex;
+    margin: 20px 0 40px;
+    
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left:0;
+    bottom:-6px;
+    transition: 0.5s;
+
+}
+.tab-links.active-link::after{
+    width: 100%;
+}
+.tab-contains ul li{
+    list-style: none;
+    margin: 10px 0;
+
+}
+.tab-contains ul li span{
+    color:red;
+    font-size: 14px;
+}
+
+.tab-contains{
+    display: none;
+    margin-left: -40px;
+}
+.tab-contains.active-tab{
+    display: block
+}
+
+/*--------------------------serices---------------------*/
+
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size:13px ;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: bg-color 0.5s,transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    color:#fff
+}
+.services-list div h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+}
+.services-list div a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block
+}
+.services-list div:hover{
+    background: red;
+    transform: translateY(-10px);
+}
+
+/*--------------------------------------portfolio---------------------------------*/
+
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+   background: linear-gradient(rgba(190, 187, 187, 0.6),#eb2664);     
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: left;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+   
+    margin-left: -190px;
+    font-size: x-large;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display:block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid red;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: red;
+}
+/*---------------------------------------------contct------------------*/
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left{
+    margin-top: 30px;
+
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: red;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 40px;
+    margin-right: 15px;
+    color: white;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: red;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background-color: red;
+}
+.btn:hover{
+color:black;
+    
+}
+.contact-right form{
+    margin-top: 60px;
+    width: 100%;
+}
+form input,form textarea{
+    width: 90%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: #262626;
+    font-weight: 300;
+}
+.copyright i{
+    color: red;
+}
+
+/*----------------------------------------------Responsive------------*/
+nav .fa-solid{
+    display: none;
+}
+@media only screen and (max-width:600px){
+    #header{
+        background-image: black ;
+    }
+    .head-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .head-text h1{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: red;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .subtitle{
+        font-size: 40px;
+
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis:100% ;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+
+}
+#msg{
+    color:#61b752;
+    margin-top: -40px;
+    margin-bottom: 50px;
+    display: block;
+}
+
+    </style>
+    <script src="https://kit.fontawesome.com/32d874f748.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <h1><span id="k">V</span>ijay.</h1>
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="head-text">
+                    <p> Front-End Developer</p>
+                    <h1> Nice To Meet You! <br> Hi, I'm <span>Vijay</span></span> </h1>
+                    
+                    
+                </div>
+                </div>
+                
+            </div>
+            <a class="btn btn2" href="resume.png" download style="background-color:red;color:black;" >Download CV</a>
+            </div>
+        </div>
+    </header>
+    <!--------------------------------------------------about--------------------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="vjprofile.jpeg" alt="img">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Hello! I'm Vijay, a passionate and dedicated frontend developer with a knack for creating stunning and user-friendly web experiences.
+                         With experience under my belt,
+                         I have honed my skills in HTML, CSS to craft visually appealing and responsive websites.</p>
+
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="ab">
+                    <div class="tab-contains active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Designing Web Interface and Multipage with responsive</li>
+                            <li><span>Content Creator</span><br>Creative Ideas for Media,Designing a page with innovative ideas</li>
+                            <li><span>Front-End,Java,Python</span><br>Strong in Basics of These Languages By Well Known Person</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contains" id="education">
+                        <ul>
+                            <li><span>2021 - 2024</span><br>BCA Ananda College Devakottai</li><br>
+                            <li><span>2021</span><br>NSMVPS Hr.Sec. School Devakottai</li><br>
+                        </ul>
+                    </div>
+                    <div class="tab-contains" id="experience">
+                        <ul>
+                            <li><span>Fresher</span><br></li>
+                            <li>As a fresher in frontend development, I have gained valuable hands-on experience in building engaging websites and collaborating effectively in teams. With a strong foundation in HTML, CSS, and JavaScript, 
+                                I am eager to continue learning and contribute to innovative projects.</li><br>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-----------------------------------services------------------------------------------------------------>
+<div id="services">
+    <div class="container">
+        <h1 class="subtitle">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>I offer comprehensive web development services, including responsive design and development, user interface optimization, and seamless integration of frontend and backend technologies.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-laptop-code"></i>
+                <h2>Project Building</h2>
+                <p>I specialize in project building, delivering end-to-end solutions from concept to deployment. With expertise in requirements analysis, architecture design, and efficient project management, I ensure successful and timely project completion.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store-ios"></i>
+                <h2>App Design</h2>
+                <p>I provide end-to-end app development services, encompassing UI/UX design and development, seamless integration of backend functionality, and thorough testing and optimization for a smooth user experience.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------------------------------portfolio--------------------------------->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/resimg.avif" alt="">
+                <div class="layer">
+                    <h3>Shop Webpage</h3>
+                    <p>As my own, I first created my project work for a restaurant webpage for own to develop my skils as <br>a frontend developer  for my career </p>
+                    
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/clglogin.png" alt="">
+                <div class="layer">
+                    <h3>College Login Form</h3>
+                    <p>I created simple login form for a college in the name of <br>
+                        ananda for my experience and practise for my code stability as frontend developer  </p>
+                    
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/pfimage.png" alt="">
+                <div class="layer">
+                    <h3>Personal Webpage</h3>
+                    <p>I wonder this was created by me for my frontend practise as <br> project which your in ,
+                        this is always be memorable as <br>i created and launched to continue as Developer</p>
+                    
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>
+</div>
+<!------------------------------------------------contact------------------------------>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Contact Me</h1>
+                <p> <a href="mailto:r.krishdvk@gmail.com" type="email"><i class="fa-solid fa-paper-plane"></a></i>vv9790607@gmail.com</p>
+                <p> <i class="fa-solid fa-square-phone"></i>8531090804</p>
+                <div class="social-icons">
+                    
+                    <a href="https://instagram.com/_v_i_j_a_y_vk_18?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://twitter.com/Vijayvk18ab17" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/vijay" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/iamvijayvk18" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" id="" placeholder="Your Email" required>
+                    <textarea name="Message"rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit"class="btn btn2" Download>submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p> &copy  Copyright @Vijay. Made With  <i class="fa-solid fa-heart"></i>  By  CodeWithVijay</p>
+    </div>
+</div>
+
+<script>
+    
+    var tablinks= document.getElementsByClassName("tab-links");
+    var tabcontains= document.getElementsByClassName("tab-contains");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontain of tabcontains){
+            tabcontain.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+    
+</script>
+<script>
+
+    var sidemeu = document.getElementById("sidemenu")
+
+    function openmenu(){
+        sidemeu.style.right ="0";
+    }
+
+    function closemenu(){
+        sidemeu.style.right ="-250px";
+    }
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxyFPH9S7mmTUmhLFMPR0qz3AhBfxCl_hlIpS9bXFBMIaAuuS4DCYbc3MFIYe1gIYst0A/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Succesfully"
+            setTimeout(function(){
+                msg.innerHTML =""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
